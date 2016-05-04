@@ -1,4 +1,10 @@
 ---
+- name: register mysql repository key
+  apt_key: keyserver=pgp.mit.edu id=5072E1F5 state=present
+
+- name: add mysql default repositories
+  apt_repository: repo='deb http://repo.mysql.com/apt/debian/ {{ debian.version }} mysql-{{ mysql.version }}' state=present
+
 - name: install mysql packages
   apt: pkg={{ item }} state=latest
   with_items:
