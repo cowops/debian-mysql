@@ -23,7 +23,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: loranger.debian-mysql }
+         - { role: cowops.debian-mysql }
 
 Tasks
 -----
@@ -31,7 +31,7 @@ Tasks
   - Install [MySQL](http://www.mysql.com/) server and client
   - Install [libmysqlclient-dev](http://packages.debian.org/search?lang=fr&searchon=names&keywords=libmysqlclient-dev)
   - Install [mytop](http://jeremy.zawodny.com/mysql/mytop/)
-  
+
 
 License
 -------
