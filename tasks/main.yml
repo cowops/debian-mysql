@@ -6,8 +6,11 @@
   apt_repository: repo='deb http://repo.mysql.com/apt/debian/ {{ debian.version }} mysql-{{ mysql.version }}' state=present
 
 - name: install mysql packages
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - mysql-server
-    - mysql-client
+  apt:
+    name: {{ packages }}
+    state: latest
+  vars:
+    packages:
+      - mysql-server
+      - mysql-client
   notify: restart mysql
